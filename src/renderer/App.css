@@ -1,0 +1,312 @@
+/* 全局样式 */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* 动画效果 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.animate-slideIn {
+  animation: slideIn 0.3s ease-out;
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* 状态指示器 */
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.status-online {
+  background-color: #10b981;
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.5);
+}
+
+.status-offline {
+  background-color: #ef4444;
+}
+
+.status-warning {
+  background-color: #f59e0b;
+}
+
+/* 卡片悬停效果 */
+.hover-card {
+  transition: all 0.2s ease;
+}
+
+.hover-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* 代码块样式 */
+.code-block {
+  font-family: 'Fira Code', 'Monaco', 'Consolas', monospace;
+  font-size: 12px;
+  line-height: 1.5;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  padding: 16px;
+  overflow: auto;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+/* JSON 语法高亮 */
+.json-key {
+  color: #9cdcfe;
+}
+
+.json-string {
+  color: #ce9178;
+}
+
+.json-number {
+  color: #b5cea8;
+}
+
+.json-boolean {
+  color: #569cd6;
+}
+
+.json-null {
+  color: #569cd6;
+}
+
+/* XML 语法高亮 */
+.xml-tag {
+  color: #569cd6;
+}
+
+.xml-attr {
+  color: #9cdcfe;
+}
+
+.xml-value {
+  color: #ce9178;
+}
+
+.xml-content {
+  color: #d4d4d4;
+}
+
+/* 协议标签 */
+.protocol-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.protocol-onvif {
+  background: rgba(0, 212, 170, 0.15);
+  color: #00d4aa;
+}
+
+.protocol-gb28181 {
+  background: rgba(99, 102, 241, 0.15);
+  color: #6366f1;
+}
+
+.protocol-rtp {
+  background: rgba(245, 158, 11, 0.15);
+  color: #f59e0b;
+}
+
+.protocol-http {
+  background: rgba(59, 130, 246, 0.15);
+  color: #3b82f6;
+}
+
+.protocol-rtsp {
+  background: rgba(139, 92, 246, 0.15);
+  color: #8b5cf6;
+}
+
+/* 日志级别标签 */
+.log-level {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.log-debug {
+  background: rgba(156, 163, 175, 0.15);
+  color: #9ca3af;
+}
+
+.log-info {
+  background: rgba(59, 130, 246, 0.15);
+  color: #3b82f6;
+}
+
+.log-warn {
+  background: rgba(245, 158, 11, 0.15);
+  color: #f59e0b;
+}
+
+.log-error {
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+}
+
+/* 方向指示器 */
+.direction-indicator {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.direction-sent {
+  color: #10b981;
+}
+
+.direction-received {
+  color: #3b82f6;
+}
+
+/* 表格样式优化 */
+.data-grid {
+  border: none !important;
+}
+
+.data-grid .MuiDataGrid-root {
+  border: none;
+  background: transparent;
+}
+
+.data-grid .MuiDataGrid-cell {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.data-grid .MuiDataGrid-columnHeaders {
+  background: rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 输入框样式 */
+.input-field {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.input-field:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.input-field.Mui-focused {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* 按钮动画 */
+.btn-animate {
+  transition: all 0.2s ease;
+}
+
+.btn-animate:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn-animate:active {
+  transform: translateY(0);
+}
+
+/* 分割面板 */
+.split-panel {
+  display: flex;
+  height: 100%;
+}
+
+.split-panel-left {
+  flex: 0 0 350px;
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  overflow: auto;
+}
+
+.split-panel-right {
+  flex: 1;
+  overflow: auto;
+  padding: 16px;
+}
+
+/* 响应式布局 */
+@media (max-width: 1200px) {
+  .split-panel {
+    flex-direction: column;
+  }
+  
+  .split-panel-left {
+    flex: none;
+    width: 100%;
+    max-height: 300px;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+}
